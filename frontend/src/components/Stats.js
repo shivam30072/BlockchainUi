@@ -7,7 +7,7 @@ const Numbers = ({ percent, time, amount = false }) => {
       <Typography
         textAlign={amount ? "center" : ""}
         color={"#4c9e9d"}
-        fontSize={{ xs: 20, sm: 35 }}
+        fontSize={{ xs: 20, sm: amount ? 65 : 35 }}
       >
         {percent}
       </Typography>
