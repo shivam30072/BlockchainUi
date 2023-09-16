@@ -1,0 +1,10 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: rgb(25, 29, 40);
+}
+
+.row{
+    background-color:rgb(46, 50, 65);
+}
