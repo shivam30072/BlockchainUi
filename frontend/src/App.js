@@ -6,11 +6,12 @@ import Table from "./components/Table";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import CircularProgress from "@mui/material/CircularProgress";
+import DataRow from "./components/DataRow";
+import Header from "./components/Header";
 
 function App() {
   const [tableData, setTableData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
   useEffect(() => {
     const fetchData = async () => {
       let id = 1;
@@ -57,7 +58,22 @@ function App() {
           <CircularProgress />
         </Box>
       ) : (
-        <Table tableData={tableData} />
+        // <Table tableData={tableData} />
+        <>
+          <Header />
+          <Box
+            width={{ sm: "100%", md: "95%" }}
+            display={"flex"}
+            flexDirection={"column"}
+            justifyContent={"center"}
+            alignItems={"center"}
+            ml={4}
+          >
+            {tableData.map((item, id) => (
+              <DataRow key={id} item={item} />
+            ))}
+          </Box>
+        </>
       )}
     </Box>
   );
